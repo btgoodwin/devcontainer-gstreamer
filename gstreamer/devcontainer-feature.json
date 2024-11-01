@@ -1,0 +1,39 @@
+{
+  "id": "gstreamer",
+  "version": "0.0.1",
+  "name": "GStreamer",
+  "documentationURL": "https://gstreamer.freedesktop.org/documentation/",
+  "description": "Installs the GStreamer framework and utilities.",
+  "options": {
+    "cerbero_url": {
+      "type": "string",
+      "default": "https://gitlab.freedesktop.org/gstreamer/cerbero.git",
+      "description": "Enter the URL of the Cerbero repository."
+    },
+    "cerbero_ref": {
+      "type": "string",
+      "default": "main",
+      "description": "Enter the branch or tag of the Cerbero repository."
+    },
+    "cerbero_args": {
+      "type": "string",
+      "default": "-t -v rust",
+      "description": "Enter additional arguments to pass to Cerbero."
+    }
+  },
+  "init": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dustypomerleau.rust-syntax",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "tamasfe.even-better-toml",
+        "fill-labs.dependi",
+      ]
+    }
+  },
+  "installsAfter": [
+      "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
